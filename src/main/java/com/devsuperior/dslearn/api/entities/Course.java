@@ -1,29 +1,37 @@
 package com.devsuperior.dslearn.api.entities;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+
+//CRIA UMA LISTA DE OFFER, O CURSO PODE VER TODAS AS OFERTAS DELE
 
 @Entity
 @Table(name = "tb_course")
-public class Course implements Serializable{
-	
+public class Course implements Serializable {
+
 	private static final long serialVersionUID = 1L;
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String name;
 	private String imgUri;
 	private String imgGrayUri;
-	
+
+	@OneToMany(mappedBy = "course")	
+	private List<Offer> offers = new ArrayList<>();
+
 	public Course() {
-		
+
 	}
 
 	public Course(Long id, String name, String imgUri, String imgGrayUri) {
@@ -66,6 +74,10 @@ public class Course implements Serializable{
 		this.imgGrayUri = imgGrayUri;
 	}
 
+	public List<Offer> getOffers() {
+		return offers;
+	}
+
 	@Override
 	public int hashCode() {
 		return Objects.hash(id);
@@ -82,7 +94,5 @@ public class Course implements Serializable{
 		Course other = (Course) obj;
 		return Objects.equals(id, other.id);
 	}
-	
-	
 
 }

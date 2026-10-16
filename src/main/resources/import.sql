@@ -12,3 +12,6 @@ INSERT INTO tb_user_role (user_id, role_id) VALUES (3,3);
 INSERT INTO tb_user_role (user_id, role_id) VALUES (2,2);
 
 INSERT INTO tb_course (name, img_uri, img_gray_uri ) VALUES ('SPRING BOOT', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlNK8PI_jQ9uQ2OFx5MyYKhlJx5VBLlxR63cEb5nzi_29l9oxaYEsb_HI&s=10', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDsGPJ07uLnXnBs6SLx4QAGWOjKXtBF6bG2azuL2u5nnguaSoyrf7NwCs&s=10');
+
+INSERT INTO tb_offer (edition, start_Moment, end_Moment, course_id) VALUES ('1.0', TIMESTAMP WITH TIME ZONE '2026-07-13T20:50:07Z', TIMESTAMP WITH TIME ZONE '2027-07-13T20:50:07.12345Z', 1);
+INSERT INTO tb_offer (edition, start_Moment, end_Moment, course_id) VALUES ('2.0', TIMESTAMP WITH TIME ZONE '2027-07-13T20:50:07Z', TIMESTAMP WITH TIME ZONE '2028-07-13T20:50:07.12345Z', 1);
